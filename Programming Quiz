@@ -1,0 +1,107 @@
+/*Question 1: Write a struct that could be used for a linked list implementation.
+Question 2: Implement an insert function for a linked list.*/
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+	int data;
+	struct node *next;
+};
+typedef struct node Node;
+
+int main(int argc, char *argv[])
+{
+  int i,val,num;
+  Node *first,*current,*previous;
+  printf("Number of nodes: ");
+  scanf("%d",&num);
+  
+  for(i=0;i<num;i++){
+  	current=(Node *) malloc(sizeof(Node));
+	printf("Data for node %d: ",i+1);
+	scanf("%d",&(current->data)); 
+	if(i==0){
+		first=current;  
+	}else{
+		previous->next=current;
+	}
+	current->next=NULL; 
+	previous=current;
+  }
+  
+  current=first; 
+  while(current!=NULL){
+  	printf("address=%p, ",current); 
+  	printf("data=%d ",current->data); 
+  	printf("next=%p\n",current->next);
+	current=current->next; 
+  } 
+  
+  system("PAUSE");	 
+  return 0;
+}
+
+
+
+
+
+ 
+/*Question 3: Reverse words in a string*/
+
+#include <stdio.h> 
+ 
+void reverse(char* begin, char* end); 
+void reverseWords(char* s) 
+{ 
+    char* word_begin = s; 
+    char* temp = s;
+    while (*temp) { 
+        temp++; 
+        if (*temp == '\0') 
+        { 
+            reverse(word_begin, temp - 1); 
+        } 
+        else if (*temp == ' ') 
+        { 
+            reverse(word_begin, temp - 1); 
+            word_begin = temp + 1; 
+        } 
+    } 
+    reverse(s, temp - 1); 
+} 
+void reverse(char* begin, char* end) 
+{ 
+    char temp; 
+    while (begin < end) 
+    { 
+        temp = *begin; 
+        *begin++ = *end; 
+        *end-- = temp; 
+    } 
+} 
+int main() 
+{ 
+    char s[] = "i like this program very much"; 
+    char* temp = s; 
+    reverseWords(s); 
+    printf("%s", s); 
+    getchar(); 
+    return 0; 
+}
+/*Question 4: How can you reverse a string*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void reverse(char str[]);
+
+int main(int argc, char *argv[])
+{
+  char arr[100];
+  printf("First sentence:");
+  gets(arr);
+  strrev(arr);
+  printf("Reverse words:\n%s\n", arr);
+  system("PAUSE");	 
+  return 0;
+  
+} 
