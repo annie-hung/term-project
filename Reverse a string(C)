@@ -1,0 +1,17 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void reverse(char str[]);
+
+int main(int argc, char *argv[])
+{
+  char arr[100];
+  printf("First sentence:");
+  gets(arr);
+  strrev(arr);
+  printf("Reverse words:\n%s\n", arr);
+  system("PAUSE");	 
+  return 0;
+  
+} 
